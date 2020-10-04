@@ -6,7 +6,7 @@ using UnityEngine;
 public class SelectionController : MonoBehaviour
 {
     [SerializeField] private string playerUnitsLayer;
-    [SerializeField] private string enemyTargetLayer;
+    [SerializeField] private string[] enemyTargetLayers;
     
     [SerializeField] private Camera camera;
 
@@ -19,7 +19,7 @@ public class SelectionController : MonoBehaviour
     private void Start()
     {
         _playerUnitsLayerMask = LayerMask.GetMask(playerUnitsLayer);
-        _enemyTargetLayerMask = LayerMask.GetMask(enemyTargetLayer);
+        _enemyTargetLayerMask = LayerMask.GetMask(enemyTargetLayers);
     }
 
     private void Update()

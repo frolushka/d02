@@ -37,4 +37,9 @@ public class Townhall : MonoBehaviour
     {
         _currentSpawnDelay += spawnTimeIncreasing;
     }
+
+    public void Die()
+    {
+        Debug.Log($"The {(((1 << gameObject.layer) & LayerMask.GetMask("Human")) != 0 ? "Orc" : "Human")} Team wins.");
+    }
 }

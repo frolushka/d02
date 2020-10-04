@@ -5,10 +5,15 @@ using UnityEngine;
 public class ComputerAI : MonoBehaviour
 {
     [SerializeField] private float acceptableDistanceToTownhall;
+    [SerializeField] private float acceptableDistanceToUnit;
+    
     [SerializeField] private Transform myTownhall;
     [SerializeField] private Transform enemyTownhall;
     private void Update()
     {
+        if (!enemyTownhall || !myTownhall)
+            return;
+        
         var allUnits = FindObjectsOfType<Unit>();
         
         var myUnits = allUnits.Where(x => ((1 << x.gameObject.layer) & LayerMask.GetMask("Human")) != 0).ToList();
@@ -25,6 +30,17 @@ public class ComputerAI : MonoBehaviour
         }
 
         if (enemyTownhall.TryGetComponent<Health>(out var target))
-        myUnits.ForEach(x => x.UpdateTarget(target));
+        myUnits.ForEach(x =>
+        {
+            var closestEnemy = enemyUnits.FirstOrDefault(y => (y.transform.position - x.transform.position).sqrMagnitude <= acceptableDistanceToUnit * acceptableDistanceToUnit);
+            if (closestEnemy && closestEnemy.TryGetComponent<Health>(out var enemyTarget))
+            {
+                x.UpdateTarget(enemyTarget);
+            }
+            else
+            {
+                x.UpdateTarget(target);
+            }
+        });
     }
 }

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptableDistanceToTownhall: 2
+  acceptableDistanceToUnit: 0
   myTownhall: {fileID: 2015051611}
   enemyTownhall: {fileID: 1450777890}
 --- !u!4 &44649191
@@ -179,7 +180,7 @@ GameObject:
   - component: {fileID: 350022672}
   - component: {fileID: 350022673}
   - component: {fileID: 350022674}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Orc Town_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +320,7 @@ GameObject:
   - component: {fileID: 357233042}
   - component: {fileID: 357233043}
   - component: {fileID: 357233044}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: PC Computer - Warcraft II - Human Buildings Summer_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +543,7 @@ GameObject:
   - component: {fileID: 525062485}
   - component: {fileID: 525062486}
   - component: {fileID: 525062487}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: PC Computer - Warcraft II - Human Buildings Summer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +683,7 @@ GameObject:
   - component: {fileID: 616319550}
   - component: {fileID: 616319551}
   - component: {fileID: 616319552}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: PC Computer - Warcraft II - Human Buildings Summer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 702120524}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,7 +1746,7 @@ GameObject:
   - component: {fileID: 886645303}
   - component: {fileID: 886645304}
   - component: {fileID: 886645305}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Orc Town_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1882,7 +1883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910616571}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,7 +1986,7 @@ GameObject:
   - component: {fileID: 1325041422}
   - component: {fileID: 1325041423}
   - component: {fileID: 1325041424}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: PC Computer - Warcraft II - Human Buildings Summer_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2126,7 +2127,7 @@ GameObject:
   - component: {fileID: 1450777892}
   - component: {fileID: 1450777893}
   - component: {fileID: 1450777894}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Townhall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 10
-  spawnTimeIncreasing: 0
+  spawnTimeIncreasing: 2.5
   unitPrefab: {fileID: 3648339319680939572, guid: fa26127bce32b49258ae32b9c2c7ed76,
     type: 3}
   spawnPosition: {fileID: 702120524}
@@ -2233,7 +2234,29 @@ MonoBehaviour:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1450777892}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1450777893}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &1450777894
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2262,7 +2285,7 @@ GameObject:
   - component: {fileID: 1560225553}
   - component: {fileID: 1560225554}
   - component: {fileID: 1560225555}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Orc Town_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2420,7 +2443,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUnitsLayer: Orc
-  enemyTargetLayer: Human
+  enemyTargetLayers:
+  - Human
+  - HumanBuilding
   camera: {fileID: 519420031}
 --- !u!4 &1704274346
 Transform:
@@ -2448,7 +2473,7 @@ GameObject:
   - component: {fileID: 1983956360}
   - component: {fileID: 1983956361}
   - component: {fileID: 1983956362}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Orc Town_39 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,7 +2614,7 @@ GameObject:
   - component: {fileID: 2015051613}
   - component: {fileID: 2015051614}
   - component: {fileID: 2015051615}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Townhall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 10
-  spawnTimeIncreasing: 0
+  spawnTimeIncreasing: 2.5
   unitPrefab: {fileID: 9080458155633157107, guid: 1b9a3ca89076740b5ba078be7025d854,
     type: 3}
   spawnPosition: {fileID: 910616571}
@@ -2696,7 +2721,29 @@ MonoBehaviour:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015051613}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2015051614}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &2015051615
 CircleCollider2D:
   m_ObjectHideFlags: 0
