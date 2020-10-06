@@ -40,6 +40,6 @@ public class Townhall : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log($"The {(((1 << gameObject.layer) & LayerMask.GetMask("Human")) != 0 ? "Orc" : "Human")} Team wins.");
+        Debug.Log($"The {(((1 << gameObject.layer) & LayerMask.GetMask("HumanBuilding")) != 0 ? "Orc" : "Human")} Team wins.");
     }
 }

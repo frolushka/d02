@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptableDistanceToTownhall: 2
-  acceptableDistanceToUnit: 0
+  acceptableDistanceToUnit: 2
   myTownhall: {fileID: 2015051611}
   enemyTownhall: {fileID: 1450777890}
 --- !u!4 &44649191
